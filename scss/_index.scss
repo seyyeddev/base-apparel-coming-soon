@@ -1,21 +1,59 @@
 .wrapper {
     max-width: 36rem;
+
+    //responsive
+    @include desktop-responsive() {
+        max-width: 160rem;
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 20% 80%;
+    }
 }
 
 //header
 .header {
     padding: 0 2rem;
     margin: 2rem 0;
+
+    //responsive
+    @include desktop-responsive() {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        padding: 0 8rem;
+        margin: 3rem 0 0 0;
+    }
+
+    @include responsive(110rem) {
+        padding: 0 10rem;
+    }
 }
 
 .header__logo {
     img {
         width: 7rem;
+
+        //responsive
+        @include desktop-responsive() {
+            width: 10rem;
+        }
+
+        @include responsive(110rem) {
+            width: 12rem;
+        }
     }
 }
 
 
 //image section
+.image {
+    @include desktop-responsive() {
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+    }
+}
+
 .image__container {
     min-width: 18.75rem;
     max-width: 48rem;
@@ -23,13 +61,31 @@
     img {
         width: 100%;
     }
+
+    //responsive
+    @include desktop-responsive() {
+        max-width: none;
+    }
 }
+
 
 
 //content
 .content {
     text-align: center;
     padding: 0 2rem;
+
+    //responsive
+    @include desktop-responsive() {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        text-align: left;
+        padding: 0 8rem;
+    }
+
+    @include responsive(110rem) {
+        padding: 0 10rem;
+    }
 }
 
 .content__title {
@@ -47,6 +103,15 @@
         font-weight: $fw-light;
         @include mainTextColor();
     }
+
+    //responsive
+    @include desktop-responsive() {
+        font-size: 3rem;
+    }
+
+    @include responsive(110rem) {
+        font-size: 5rem;
+    }
 }
 
 .content__caption {
@@ -55,6 +120,15 @@
     font-size: 1rem;
     line-height: 1.4;
     @include mainTextColor();
+
+    //responsive
+    @include desktop-responsive() {
+        font-size: 1.1rem;
+    }
+
+    @include responsive(110rem) {
+        font-size: 1.5rem;
+    }
 }
 
 .content__form {
@@ -77,8 +151,18 @@
     border-radius: 2rem;
     outline: none;
     padding: 0.8rem 1.5rem;
-    background: $gradient;
+    background: $gradient;  
     opacity: 0.5;
+
+    //responsive
+    @include desktop-responsive() {
+        padding: 1.3rem 1.8rem;
+    }
+
+    @include responsive(110rem) {
+        padding: 1.8rem 2.5rem;
+        border-radius: 3rem;
+    }
 }
 
 .content__input::placeholder {
@@ -86,6 +170,15 @@
     font-weight: $fw-regular;
     font-size: 0.9rem;
     @include mainTextColor();
+
+    //responsive
+    @include desktop-responsive() {
+        font-size: 1.1rem;
+    }
+
+    @include responsive(110rem) {
+        font-size: 1.5rem;
+    }
 }
 
 
@@ -100,6 +193,16 @@
     right: 0;
     cursor: pointer;
     box-shadow: 0 0.5rem 0.8rem 0 hsla(0, 93%, 68%, 0.3);
+
+    //responsive
+    @include desktop-responsive() {
+        padding: 1.2rem 2.5rem;
+    }
+
+    @include responsive(110rem) {
+        padding: 1.7rem 3rem;
+        border-radius: 3rem;
+    }
 }
 
 .content__errormsg {

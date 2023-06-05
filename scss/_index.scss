@@ -151,8 +151,19 @@
     border-radius: 2rem;
     outline: none;
     padding: 0.8rem 1.5rem;
-    background: $gradient;  
+    background: $gradient;
     opacity: 0.5;
+
+    &--invalid {
+        background: url(../images/icon-error.svg) no-repeat;
+        background-position: top 10px right 5.2rem;
+        outline: 2px solid $softRed;
+
+        //responsive
+        @include desktop-responsive() {
+            background-position: top 19px right 6rem;
+        }
+    }
 
     //responsive
     @include desktop-responsive() {
@@ -193,10 +204,15 @@
     right: 0;
     cursor: pointer;
     box-shadow: 0 0.5rem 0.8rem 0 hsla(0, 93%, 68%, 0.3);
+    transition: all 0.3s;
 
     //responsive
     @include desktop-responsive() {
         padding: 1.2rem 2.5rem;
+
+        &:hover {
+            opacity: 0.5;
+        }
     }
 
     @include responsive(110rem) {

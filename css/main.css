@@ -165,6 +165,16 @@
   background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
   opacity: 0.5;
 }
+.content__input--invalid {
+  background: url(../images/icon-error.svg) no-repeat;
+  background-position: top 10px right 5.2rem;
+  outline: 2px solid hsl(0, 93%, 68%);
+}
+@media only screen and (min-width: 64rem) {
+  .content__input--invalid {
+    background-position: top 19px right 6rem;
+  }
+}
 @media only screen and (min-width: 64rem) {
   .content__input {
     padding: 1.3rem 1.8rem;
@@ -206,10 +216,14 @@
   right: 0;
   cursor: pointer;
   box-shadow: 0 0.5rem 0.8rem 0 hsla(0, 93%, 68%, 0.3);
+  transition: all 0.3s;
 }
 @media only screen and (min-width: 64rem) {
   .content__btn {
     padding: 1.2rem 2.5rem;
+  }
+  .content__btn:hover {
+    opacity: 0.5;
   }
 }
 @media only screen and (min-width: 110rem) {

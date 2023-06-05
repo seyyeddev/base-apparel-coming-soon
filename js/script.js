@@ -4,7 +4,7 @@ let submit = document.querySelector(".content__btn");
 
 // To prevent default bahavior button
 submit.addEventListener("click", (e) => {
-    //e.preventDefault();
+    e.preventDefault();
 })
 
 //change image

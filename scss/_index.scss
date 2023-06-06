@@ -1,27 +1,83 @@
 .wrapper {
     max-width: 36rem;
+
+    //responsive
+    @include desktop-responsive() {
+        display: flex;
+        flex-direction: column;
+        max-width: 90rem;
+        position: relative;
+    }
 }
 
 //header
 .header {
     padding: 0 2rem;
     margin: 2rem 0;
+
+    //responsive
+    @include desktop-responsive() {
+        position: absolute;
+        width: 50%;
+        padding: 0 9rem;
+        margin-top: 3rem;
+    }
 }
 
 .header__logo {
     img {
         width: 7rem;
+
+        //responsive
+        @include desktop-responsive() {
+            width: 9rem;
+        }
+    }
+}
+
+
+//main
+.main {
+
+    //responsive
+    @include desktop-responsive() {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: flex-end;
     }
 }
 
 
 //image section
+.image {
+
+    //responsive
+    @include desktop-responsive() {
+        width: 50%;
+        height: 100vh;
+    }
+}
+
 .image__container {
     min-width: 18.75rem;
     max-width: 48rem;
 
+    //responsive
+    @include desktop-responsive() {
+        max-width: none;
+        width: 100%;
+        height: 100%;
+    }
+
     img {
         width: 100%;
+
+        //responsive
+        @include desktop-responsive() {
+            height: 100%;
+            object-fit: contain;
+            object-position: right;
+        }
     }
 }
 
@@ -30,6 +86,12 @@
 .content {
     text-align: center;
     padding: 0 2rem;
+
+    @include desktop-responsive() {
+        width: 50%;
+        text-align: left;
+        padding: 0 9rem;
+    }
 }
 
 .content__title {
@@ -46,6 +108,11 @@
         font-family: $ff-light;
         font-weight: $fw-light;
         @include mainTextColor();
+    }
+
+    //responsive
+    @include desktop-responsive() {
+        font-size: 3.5rem;
     }
 }
 
@@ -79,6 +146,11 @@
     padding: 0.8rem 1.5rem;
     background: $gradient;
     opacity: 0.5;
+
+    //responsive
+    @include desktop-responsive() {
+        padding: 0.9rem 1.5rem;
+    }
 }
 
 .content__input::placeholder {
@@ -100,6 +172,11 @@
     right: 0;
     cursor: pointer;
     box-shadow: 0 0.5rem 0.8rem 0 hsla(0, 93%, 68%, 0.3);
+
+    //responsive
+    @include desktop-responsive() {
+        padding: 0.8rem 2.5rem;
+    }
 }
 
 .content__errormsg {

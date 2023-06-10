@@ -15,6 +15,7 @@
 }
 .wrapper {
   max-width: 36rem;
+  background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
 }
 @media only screen and (min-width: 64rem) {
   .wrapper {
@@ -33,7 +34,7 @@
   .header {
     position: absolute;
     width: 50%;
-    padding: 0 9rem;
+    padding: 0 8rem;
     margin-top: 3rem;
   }
 }
@@ -52,13 +53,24 @@
     display: flex;
     flex-direction: row-reverse;
     align-items: flex-end;
+    background: url(../images/bg-pattern-desktop.svg) no-repeat left;
+  }
+}
+@media only screen and (min-width: 160rem) {
+  .main {
+    align-items: center;
   }
 }
 
 @media only screen and (min-width: 64rem) {
   .image {
-    width: 50%;
+    width: 40%;
     height: 100vh;
+  }
+}
+@media only screen and (min-width: 90rem) {
+  .image {
+    width: 45%;
   }
 }
 
@@ -79,6 +91,10 @@
 @media only screen and (min-width: 64rem) {
   .image__container img {
     height: 100%;
+  }
+}
+@media only screen and (min-width: 160rem) {
+  .image__container img {
     object-fit: contain;
     object-position: right;
   }
@@ -90,9 +106,14 @@
 }
 @media only screen and (min-width: 64rem) {
   .content {
-    width: 50%;
+    width: 60%;
     text-align: left;
-    padding: 0 9rem;
+    padding: 0 8rem;
+  }
+}
+@media only screen and (min-width: 90rem) {
+  .content {
+    width: 55%;
   }
 }
 
@@ -113,6 +134,11 @@
   opacity: 0.5;
 }
 @media only screen and (min-width: 64rem) {
+  .content__title {
+    font-size: 3rem;
+  }
+}
+@media only screen and (min-width: 90rem) {
   .content__title {
     font-size: 3.5rem;
   }
@@ -150,6 +176,21 @@
   background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
   opacity: 0.5;
 }
+.content__input:focus {
+  outline: 0.063rem solid hsl(0, 6%, 24%);
+}
+.content__input--invalid {
+  background-image: url(../images/icon-error.svg);
+  background-repeat: no-repeat;
+  background-position: right 5rem top 0.7rem;
+  outline: 0.125rem solid hsl(0, 93%, 68%);
+  opacity: 1;
+}
+@media only screen and (min-width: 64rem) {
+  .content__input--invalid {
+    background-position: right 7rem top 0.7rem;
+  }
+}
 @media only screen and (min-width: 64rem) {
   .content__input {
     padding: 0.9rem 1.5rem;
@@ -175,10 +216,18 @@
   right: 0;
   cursor: pointer;
   box-shadow: 0 0.5rem 0.8rem 0 hsla(0, 93%, 68%, 0.3);
+  transition: all 0.5s;
+}
+.content__btn:focus {
+  outline: 0.063rem solid hsl(0, 6%, 24%);
 }
 @media only screen and (min-width: 64rem) {
   .content__btn {
     padding: 0.8rem 2.5rem;
+  }
+  .content__btn:hover {
+    background-image: linear-gradient(135deg, hsla(0, 80%, 86%, 0.5), hsla(0, 74%, 74%, 0.4));
+    right: -0.5rem;
   }
 }
 
@@ -188,7 +237,7 @@
   color: hsl(0, 93%, 68%);
   font-size: 0.8rem;
   margin: 0.5rem 0 0 1rem;
-  display: none;
+  display: block;
 }
 
 *,
@@ -201,7 +250,6 @@
 
 body {
   min-height: 100vh;
-  background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
   display: flex;
   justify-content: center;
   align-items: center;

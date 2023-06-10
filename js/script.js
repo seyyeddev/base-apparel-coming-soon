@@ -8,6 +8,8 @@ submit.addEventListener("click", (e) => {
 })
 
 //change image
-if (window.innerWidth > "1024") {
-    image.setAttribute("src", "./images/hero-desktop.jpg")
+if (window.innerWidth >= "1024") {
+    image.setAttribute("src", "./images/hero-desktop.jpg");
+} else {
+    image.setAttribute("src", "./images/hero-mobile.jpg");
 }
